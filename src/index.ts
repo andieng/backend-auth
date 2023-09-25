@@ -6,8 +6,6 @@ import fastifyApollo, {
 } from "@as-integrations/fastify";
 import app from "./app";
 
-import bookTypeDefs from "./typeDefs/bookTypeDef";
-import bookResolver from "./resolvers/bookResolver";
 import userTypeDefs from "./typeDefs/userTypeDef";
 import userResolver from "./resolvers/userResolver";
 
@@ -19,8 +17,8 @@ const baseTypeDefs = `
 `;
 
 const apollo = new ApolloServer<BaseContext>({
-  typeDefs: [baseTypeDefs, bookTypeDefs, userTypeDefs],
-  resolvers: _.merge({}, bookResolver, userResolver),
+  typeDefs: [baseTypeDefs, userTypeDefs],
+  resolvers: _.merge({}, userResolver),
   plugins: [fastifyApolloDrainPlugin(app)],
 });
 

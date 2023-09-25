@@ -1,10 +1,7 @@
-import { FastifyReply, FastifyRequest } from "fastify";
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
 import User from "../interfaces/UserInterface";
 import db from "../config/connectDb";
 import generateToken from "../config/generateToken";
-import refreshToken from "../config/refreshToken";
 
 const saltRounds = 10;
 const users = db.get("users").value();
