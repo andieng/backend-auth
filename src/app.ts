@@ -1,5 +1,19 @@
 import fastify, { FastifyReply, FastifyRequest } from "fastify";
-// import authRoute from "./routes/authRoute";
+import lowdbPlugin from "./plugins/lowdbPlugin";
+
+// Database plugin
+declare module "fastify" {
+  interface FastifyInstance {
+    db: any;
+  }
+  interface FastifyContext {
+    isAuthenticated: boolean;
+    request: FastifyRequest;
+    reply: FastifyReply;
+  }
+}
+
+const myPort = Number(process.env.PORT) || 5050;
 
 // App config
 const app = fastify();
@@ -17,7 +31,17 @@ const errorHandler = (
 
 app.setErrorHandler(errorHandler);
 
-// Routes
-// app.register(authRoute, { prefix: "/graphql" });
+app.register(
+  lowdbPlugin({
+    connectionString: String(process.env.DB_PATH),
+    pluginName: "db",
+  })
+);
+app.register(
+  lowdbPlugin({
+    connectionString: String(process.env.DB_TEST_PATH),
+    pluginName: "dbTest",
+  })
+);
 
 export default app;

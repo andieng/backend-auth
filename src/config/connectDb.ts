@@ -1,8 +1,8 @@
 import low from "lowdb";
 import FileSync from "lowdb/adapters/FileSync";
 
-const connectDb = () => {
-  const adapter = new FileSync("src/database/db.json");
+const connectDb = (filename: string) => {
+  const adapter = new FileSync(filename);
   const db = low(adapter);
   db.defaults({
     users: [],
@@ -10,6 +10,4 @@ const connectDb = () => {
   return db;
 };
 
-const db = connectDb();
-
-export default db;
+export default connectDb;
