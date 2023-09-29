@@ -5,10 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "jest",
-    "build": "tsc -w",
-    "dev": "nodemon --es-module-specifier-resolution=node dist/index.js",
-    "start": "node --es-module-specifier-resolution=node dist/index.js"
+    "test": "NODE_ENV=test jest --runInBand --detectOpenHandles --forceExit",
+    "build": "NODE_ENV=development tsc -w",
+    "dev": "NODE_ENV=development nodemon --es-module-specifier-resolution=node dist/index.js",
+    "start": "NODE_ENV=development node --es-module-specifier-resolution=node dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -35,5 +35,8 @@
     "jsonwebtoken": "^9.0.2",
     "lodash": "^4.17.21",
     "lowdb": "^1.0.0"
+  },
+  "optionalDependencies": {
+    "win-node-env": "^0.6.1"
   }
 }

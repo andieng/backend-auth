@@ -19,14 +19,15 @@ const lowdbPlugin = (dbOptions: DbOptionsInterface) => {
         },
         create(user: User): User {
           (<any>db.get("users")).push({ ...user }).write();
-
           return user;
         },
+        remove(username: string): void {
+          (<any>db.get("users")).remove({ username }).write();
+        },
         find(username: string): User | undefined {
-          const users = db.get("users").value();
-          const findUser = users.find(
-            (user: User) => user.username === username
-          );
+          const findUser = (<any>db.get("users"))
+            .find((user: User) => user.username === username)
+            .value();
           return findUser;
         },
         findByToken(refreshToken: string): User | undefined {

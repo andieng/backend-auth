@@ -1,5 +1,11 @@
 {
     "preset": "ts-jest",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "testMatch": [
+        "**/__tests__/**/*.+(ts)"
+    ],
+    "setupFiles": [
+        "<rootDir>/src/index.ts"
+    ]
 }
   

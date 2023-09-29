@@ -6,7 +6,26 @@
     },
     {
       "username": "user1",
-      "password": "$2b$10$dSJ55fIpxSL/kgguUHrN5ugf4O43BkaQi.4ITvQf6Nu5aFDMXK5Ga"
+      "password": "$2b$10$dSJ55fIpxSL/kgguUHrN5ugf4O43BkaQi.4ITvQf6Nu5aFDMXK5Ga",
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIxIiwiaWF0IjoxNjk1OTYwNjQ3LCJleHAiOjE2OTYyMTk4NDd9.h5xwhO7QGjSg2jnYRVAVrsRMDsUi_-c7l62hDbAhkck"
+    },
+    {
+      "username": "user2",
+      "password": "$2b$10$OTAC3UVDrGbGh.Xt6.GbEuJw4gzv8/nV1zjt5XSaRCE0JjKhE4K12"
+    },
+    {
+      "username": "user3",
+      "password": "$2b$10$wn101VtZuEngdZ.TSw0MAeC4AkwNbkvsh6xLEIZqUU1i.1BCdIVKK"
+    },
+    {
+      "username": "user10",
+      "password": "$2b$10$OJvmo6clEFC/VizW1mxw4OhU8ndPonYRGLYSlnyX88sg1GYKhFJda",
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIxMCIsImlhdCI6MTY5NTk2MDUzMCwiZXhwIjoxNjk2MjE5NzMwfQ.HqUCQ_Au9odkmasFRYjjCgQ89lPFE2kfntJfxxUYUsA"
+    },
+    {
+      "username": "__exist_user__",
+      "password": "$2b$10$RItjRwRvjifBbYtx5Vp6suuH/3HROhHWwW4VvaqNu.6el3EfRd.TC",
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Il9fZXhpc3RfdXNlcl9fIiwiaWF0IjoxNjk1OTc4MjA1LCJleHAiOjE2OTYyMzc0MDV9.cScqvYuJsTUgJVbRXRuni6ltL4yp6tf7J32JFmLobPI"
     }
   ]
 }

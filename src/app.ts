@@ -1,10 +1,14 @@
 import fastify, { FastifyReply, FastifyRequest } from "fastify";
+import dotenv from "dotenv";
 import lowdbPlugin from "./plugins/lowdbPlugin";
 
-// Database plugin
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
+const myPort = Number(process.env.PORT) || 5050;
+
 declare module "fastify" {
   interface FastifyInstance {
     db: any;
+    dbTest: any;
   }
   interface FastifyContext {
     isAuthenticated: boolean;
@@ -12,8 +16,6 @@ declare module "fastify" {
     reply: FastifyReply;
   }
 }
-
-const myPort = Number(process.env.PORT) || 5050;
 
 // App config
 const app = fastify();
@@ -28,19 +30,12 @@ const errorHandler = (
   reply.status(statusCode);
   reply.send(error);
 };
-
 app.setErrorHandler(errorHandler);
 
 app.register(
   lowdbPlugin({
     connectionString: String(process.env.DB_PATH),
     pluginName: "db",
-  })
-);
-app.register(
-  lowdbPlugin({
-    connectionString: String(process.env.DB_TEST_PATH),
-    pluginName: "dbTest",
   })
 );
 
