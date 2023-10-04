@@ -30,6 +30,7 @@ const errorHandler = (
   reply.status(statusCode);
   reply.send(error);
 };
+
 app.setErrorHandler(errorHandler);
 
 app.register(
