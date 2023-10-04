@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import User from "../interfaces/UserInterface";
+import User from "../types/interfaces/UserInterface";
 import genAccessToken from "../config/genAccessToken";
 import app from "../app";
 import genRefreshToken from "../config/genRefreshToken";

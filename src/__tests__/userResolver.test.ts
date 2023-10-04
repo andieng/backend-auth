@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import "jest";
 import app from "../app";
-import User from "../interfaces/UserInterface";
+import User from "../types/interfaces/UserInterface";
 import {
   USER_ALREADY_EXISTS_ERROR,
   WRONG_PASSWORD_ERROR,

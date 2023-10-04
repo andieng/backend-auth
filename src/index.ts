@@ -5,10 +5,10 @@ import fastifyApollo, {
 } from "@as-integrations/fastify";
 
 import app from "./app";
-import userTypeDefs from "./typeDefs/userTypeDef";
+import userTypeDefs from "./types/typeDefs/userTypeDef";
 import userResolver from "./resolvers/userResolver";
 import authMiddleware from "./middlewares/authMiddleware";
-import MyContext from "./interfaces/MyContext";
+import MyContext from "./types/interfaces/MyContext";
 
 const myPort = Number(process.env.PORT) || 5050;
 

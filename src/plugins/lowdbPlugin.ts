@@ -2,8 +2,8 @@ import { FastifyInstance, FastifyPluginCallback } from "fastify";
 import fp from "fastify-plugin";
 import low from "lowdb";
 import FileSync from "lowdb/adapters/FileSync";
-import DbOptionsInterface from "../interfaces/DbOptionsInterface";
-import User from "../interfaces/UserInterface";
+import DbOptionsInterface from "../types/interfaces/DbOptionsInterface";
+import User from "../types/interfaces/UserInterface";
 
 const lowdbPlugin = (dbOptions: DbOptionsInterface) => {
   const adapter = new FileSync(dbOptions.connectionString);
